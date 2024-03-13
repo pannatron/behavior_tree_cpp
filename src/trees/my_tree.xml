@@ -1,0 +1,28 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Fallback name="root_fallback">
+      <Sequence name="root_sequence">
+        <TickCount name="tick_1" ticks="5"/>
+        <TickCount name="tick_2" ticks="3"/>
+        <ForceSuccess name="force_success_sequence">
+          <TickCount name="tick_4" ticks="1"/>
+        </ForceSuccess>
+        <ForceFailure name="force_failure_sequence">
+          <TickCount name="tick_3" ticks="1"/>
+        </ForceFailure>
+      </Sequence>
+      <SequenceStar name="root_sequence_star">
+        <ForceSuccess name="force_success_sequence_star_1">
+          <TickCount name="tick_4" ticks="1"/>
+        </ForceSuccess>
+        <ForceFailure name="force_failure_sequence_star">
+          <TickCount name="tick_3" ticks="1"/>
+        </ForceFailure>
+        <ForceSuccess name="force_success_sequence_star_2">
+          <TickCount name="tick_4" ticks="1"/>
+        </ForceSuccess>
+      </SequenceStar>
+    </Fallback>
+  </BehaviorTree>
+</root>
+

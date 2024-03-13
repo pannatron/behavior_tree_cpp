@@ -1,0 +1,13 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Sequence name="root_sequence">
+      <TickCount name="tick_1" ticks="5"/>
+      <TickCount name="tick_2" ticks="3"/>
+      <ForceSuccess name="force_success_sequence">
+        <TickCount name="tick_4" ticks="1"/>
+      </ForceSuccess>
+	<WaitAndSetAction topic="/some_topic" output_key="some_output_key" />
+    </Sequence>
+  </BehaviorTree>
+</root>
+
